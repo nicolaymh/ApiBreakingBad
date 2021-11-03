@@ -3,39 +3,32 @@ export const useFetch = () => {
         const urlQuotes = 'https://breakingbadapi.com/api/quotes';
         const respQuotes = await fetch(urlQuotes);
         const dataQuotes = await respQuotes.json();
-        // console.log(dataQuotes);
 
-        // {quote_id: 2, quote: 'Stay out of my territory.', author: 'Walter White', series: 'Breaking Bad'}
-
-        //Uniendo las citas en un solo nombre:
+        //? Uniendo las citas en un solo nombre:
         let arrayFinal = [];
         dataQuotes.forEach((element) => {
-            let arrayTemp = [{ name: element.author, quotes: {} }];
+            let arrayTemp = { name: element.author, quotes: null };
 
-            let uniendo = dataQuotes.map((ele) => {
-                if (element.author === ele.author) {
-                    return ele.quote;
-                }
-            });
-
-            arrayFinal = [
-                ...arrayFinal,
-                { ...arrayTemp, quotes: [...uniendo] },
-            ];
+            let uniendo = dataQuotes.map((ele) =>
+                element.author === ele.author ? ele.quote : null,
+            );
+            arrayTemp = { ...arrayTemp, quotes: uniendo };
+            arrayFinal = [...arrayFinal, arrayTemp];
         });
 
-        // console.log(arrayFinal);
-
-        //Quitando citas indefinidas:
+        //? Quitando citas indefinidas:
         arrayFinal = arrayFinal.map((element) => {
-            const temp = element.quotes.filter((e) => e !== undefined);
+            const temp = element.quotes.filter((e) => e !== null);
 
             return { ...element, quotes: temp };
         });
 
-        console.log(arrayFinal);
-
-        //Eliminando elementos duplicados:
+        //? Eliminando elementos duplicados:
+        const names = arrayFinal.map((o) => o.name);
+        const filtered = arrayFinal.filter(
+            ({ name }, index) => !names.includes(name, index + 1),
+        );
+        console.log(filtered);
     };
 
     return { callApi };
