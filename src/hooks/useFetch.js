@@ -1,34 +1,37 @@
+import {
+    deleteAuthorRepeated,
+    joinQuotes,
+    removeQuotes,
+} from '../helpers/fetchFilterQuote';
+
 export const useFetch = () => {
     const callApi = async () => {
+        //! Call Quotes Api:
         const urlQuotes = 'https://breakingbadapi.com/api/quotes';
         const respQuotes = await fetch(urlQuotes);
         const dataQuotes = await respQuotes.json();
 
-        //? Uniendo las citas en un solo nombre:
+        //? Array to handle global information about quote:
         let arrayFinal = [];
-        dataQuotes.forEach((element) => {
-            let arrayTemp = { name: element.author, quotes: null };
 
-            let uniendo = dataQuotes.map((ele) =>
-                element.author === ele.author ? ele.quote : null,
-            );
-            arrayTemp = { ...arrayTemp, quotes: uniendo };
-            arrayFinal = [...arrayFinal, arrayTemp];
-        });
+        //* Join all quotes with its author:
+        arrayFinal = joinQuotes(dataQuotes);
 
-        //? Quitando citas indefinidas:
-        arrayFinal = arrayFinal.map((element) => {
-            const temp = element.quotes.filter((e) => e !== null);
+        //* Remove undefined quotes:
+        arrayFinal = removeQuotes(arrayFinal);
 
-            return { ...element, quotes: temp };
-        });
+        //* Delete authors repeated:
+        arrayFinal = deleteAuthorRepeated(arrayFinal);
 
-        //? Eliminando elementos duplicados:
-        const names = arrayFinal.map((o) => o.name);
-        const filtered = arrayFinal.filter(
-            ({ name }, index) => !names.includes(name, index + 1),
-        );
-        console.log(filtered);
+        console.log(arrayFinal);
+
+        //! Call Character Api:
+        const urlCharacter = `https://breakingbadapi.com/api/characters?name=Walter`;
+        const respCharacter = await fetch(urlCharacter);
+        const dataCharacter = await respCharacter.json();
+
+        //* Consult Character:
+        
     };
 
     return { callApi };
