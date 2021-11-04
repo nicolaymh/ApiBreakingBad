@@ -3,6 +3,7 @@ import {
     joinQuotes,
     removeQuotes,
 } from '../helpers/fetchFilterQuote';
+import { images } from '../helpers/images';
 
 export const useFetch = () => {
     const callApi = async () => {
@@ -23,40 +24,15 @@ export const useFetch = () => {
         //* Delete authors repeated:
         arrayFinal = deleteAuthorRepeated(arrayFinal);
 
-        console.log(arrayFinal);
+        //! Add image link:
+        const arrLink = arrayFinal.map((author, index) => {
+            const arrTemp = images.filter(
+                (character) => author.name === character.name,
+            );
 
-        //! Call Character Api:
-        // const consultCharacter = async (authors) => {
-        //     const newArray = arrayFinal.map((author) => {
-        //         console.log(author.name);
-        //         // const urlCharacter = `https://breakingbadapi.com/api/characters?name=${author.name}`;
-        //     });
-        // };
-
-        // let arr = [];
-        // const arrayTemp = await arrayFinal.map(async (author) => {
-        //     const urlCharacter = `https://breakingbadapi.com/api/characters?name=${author.name}`;
-        //     const respCharacter = await fetch(urlCharacter);
-        //     const dataCharacter = await respCharacter.json();
-
-        //     arr = [...arr, dataCharacter];
-
-        //     return dataCharacter;
-        // });
-
-        let arr = [];
-        arrayFinal.forEach(async (author) => {
-            const urlCharacter = `https://breakingbadapi.com/api/characters?name=${author.name}`;
-            const respCharacter = await fetch(urlCharacter);
-            const dataCharacter = await respCharacter.json();
-
-            console.log(dataCharacter);
-
-            arr = [...arr, dataCharacter];
+            return { id: index, ...author, img: arrTemp[0].img };
         });
-
-        console.log(arr);
+        arrayFinal = [...arrLink];
     };
-
     return { callApi };
 };
