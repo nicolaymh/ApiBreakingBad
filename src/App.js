@@ -1,15 +1,23 @@
+import { BootLoad } from './components/BootLoad';
+import { Header } from './components/Header';
+import { Spinner } from './components/Spinner';
 import { useFetch } from './hooks/useFetch';
+
 import './style.css/App.css';
 
 const App = () => {
-    const { callApi } = useFetch();
-
-    callApi();
+    const { infoCharacters, loading } = useFetch();
 
     return (
-        <div>
-            <h1>Hola Mundo!!</h1>
-        </div>
+        <>
+            <Header />
+
+            {loading && <Spinner />}
+
+            {infoCharacters.map(({ id, name, img }) => (
+                <BootLoad key={id} name={name} img={img} />
+            ))}
+        </>
     );
 };
 

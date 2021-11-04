@@ -1,5 +1,7 @@
 //? Functions to filter useFetch:
 
+import { images } from './images';
+
 //* Join all quotes with its author:
 export const joinQuotes = (dataQuotes) => {
     let arrayFinal = [];
@@ -35,6 +37,21 @@ export const deleteAuthorRepeated = (deleteAuthor) => {
     arrayFinal = deleteAuthor.filter(
         ({ name }, index) => !names.includes(name, index + 1),
     );
+
+    return arrayFinal;
+};
+
+//* Add Image Link:
+export const AddImageLink = (ImageLink) => {
+    let arrayFinal = [];
+    const arrLink = ImageLink.map((author, index) => {
+        const arrTemp = images.filter(
+            (character) => author.name === character.name,
+        );
+
+        return { id: index, ...author, img: arrTemp[0].img };
+    });
+    arrayFinal = [...arrLink];
 
     return arrayFinal;
 };

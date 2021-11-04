@@ -1,19 +1,28 @@
+import { useEffect, useState } from 'react';
 import {
+    AddImageLink,
     deleteAuthorRepeated,
     joinQuotes,
     removeQuotes,
-} from '../helpers/fetchFilterQuote';
-import { images } from '../helpers/images';
+} from '../helpers/fetchFilter';
 
 export const useFetch = () => {
+    const [infoCharacters, setInfoCharacters] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        callApi();
+    }, []);
+
     const callApi = async () => {
         //! Call Quotes Api:
         const urlQuotes = 'https://breakingbadapi.com/api/quotes';
         const respQuotes = await fetch(urlQuotes);
         const dataQuotes = await respQuotes.json();
 
-        //? Array to handle global information about quote:
         let arrayFinal = [];
+
+        //? Array to handle global information about quote:
 
         //* Join all quotes with its author:
         arrayFinal = joinQuotes(dataQuotes);
@@ -25,14 +34,13 @@ export const useFetch = () => {
         arrayFinal = deleteAuthorRepeated(arrayFinal);
 
         //! Add image link:
-        const arrLink = arrayFinal.map((author, index) => {
-            const arrTemp = images.filter(
-                (character) => author.name === character.name,
-            );
+        arrayFinal = AddImageLink(arrayFinal);
 
-            return { id: index, ...author, img: arrTemp[0].img };
-        });
-        arrayFinal = [...arrLink];
+        setInfoCharacters([...arrayFinal]);
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
     };
-    return { callApi };
+    return { infoCharacters, loading };
 };
