@@ -26,12 +26,36 @@ export const useFetch = () => {
         console.log(arrayFinal);
 
         //! Call Character Api:
-        const urlCharacter = `https://breakingbadapi.com/api/characters?name=Walter`;
-        const respCharacter = await fetch(urlCharacter);
-        const dataCharacter = await respCharacter.json();
+        // const consultCharacter = async (authors) => {
+        //     const newArray = arrayFinal.map((author) => {
+        //         console.log(author.name);
+        //         // const urlCharacter = `https://breakingbadapi.com/api/characters?name=${author.name}`;
+        //     });
+        // };
 
-        //* Consult Character:
-        
+        // let arr = [];
+        // const arrayTemp = await arrayFinal.map(async (author) => {
+        //     const urlCharacter = `https://breakingbadapi.com/api/characters?name=${author.name}`;
+        //     const respCharacter = await fetch(urlCharacter);
+        //     const dataCharacter = await respCharacter.json();
+
+        //     arr = [...arr, dataCharacter];
+
+        //     return dataCharacter;
+        // });
+
+        let arr = [];
+        arrayFinal.forEach(async (author) => {
+            const urlCharacter = `https://breakingbadapi.com/api/characters?name=${author.name}`;
+            const respCharacter = await fetch(urlCharacter);
+            const dataCharacter = await respCharacter.json();
+
+            console.log(dataCharacter);
+
+            arr = [...arr, dataCharacter];
+        });
+
+        console.log(arr);
     };
 
     return { callApi };
