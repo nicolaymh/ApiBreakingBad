@@ -4,6 +4,7 @@ import { Spinner } from './components/Spinner';
 import { useFetch } from './hooks/useFetch';
 
 import './style.css/App.css';
+import './style.css/BootLoad.css';
 
 const App = () => {
     const { infoCharacters, loading } = useFetch();
@@ -14,9 +15,11 @@ const App = () => {
 
             {loading && <Spinner />}
 
-            {infoCharacters.map(({ id, name, img }) => (
-                <BootLoad key={id} name={name} img={img} />
-            ))}
+            <main className='main__container container'>
+                {infoCharacters.map(({ id, name, img }) => (
+                    <BootLoad key={id} index={id} name={name} img={img} />
+                ))}
+            </main>
         </>
     );
 };

@@ -19,6 +19,7 @@ export const Header = () => {
                             className='header__navLink'
                             href='https://breakingbadapi.com/'
                             target='_blank'
+                            rel='noreferrer'
                         >
                             API
                         </a>
@@ -26,6 +27,7 @@ export const Header = () => {
                             className='header__navLink'
                             href='https://breakingbadapi.com/api/quotes'
                             target='_blank'
+                            rel='noreferrer'
                         >
                             Quotes
                         </a>
@@ -33,6 +35,7 @@ export const Header = () => {
                             className='header__navLink'
                             href='https://breakingbadapi.com/documentation'
                             target='_blank'
+                            rel='noreferrer'
                         >
                             DocumentAtion
                         </a>

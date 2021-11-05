@@ -1,12 +1,17 @@
 import React from 'react';
 
-export const BootLoad = ({ id, name, img }) => {
+import '../style.css/BootLoad.css';
+
+export const BootLoad = ({ index, name, img }) => {
     return (
-        <main className='container'>
-            <h1>{name}</h1>
-            <div>
-                <img src={img} alt={name} />
+        <div className='main__info'>
+            <div className='main__texto'>
+                <h1 className='main__number'>{index + 1}</h1>
+                <p className='main__name'>{name}</p>
             </div>
-        </main>
+            <div className='main__image'>
+                <img className='image' src={img} alt={name} />
+            </div>
+        </div>
     );
 };
