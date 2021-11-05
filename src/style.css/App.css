@@ -1,4 +1,4 @@
-/*! Configuraciones globales */
+/*! Global Configurations */
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -9,7 +9,6 @@ html {
     box-sizing: inherit;
 }
 body {
-    font-family: var(--fuentePrincipal);
     font-size: 1.6rem;
     line-height: 1.8;
     background-color: #369457;

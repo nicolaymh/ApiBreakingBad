@@ -33,7 +33,7 @@ export const images = [
     },
     {
         name: 'Mike Ehrmantraut',
-        img: 'https://cdnb.artstation.com/p/assets/images/images/004/502/157/large/ming-xutao-mike-01.jpg?1484136963',
+        img: 'https://indiehoy.com/wp-content/uploads/2019/09/Mike-Ehrmantraut-1200x900.jpg',
     },
     {
         name: 'Chuck McGill',

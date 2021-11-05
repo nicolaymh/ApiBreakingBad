@@ -16,8 +16,8 @@ const App = () => {
             {loading && <Spinner />}
 
             <main className='main__container container'>
-                {infoCharacters.map(({ id, name, img }) => (
-                    <BootLoad key={id} index={id} name={name} img={img} />
+                {infoCharacters.map(({ id, name, img }, index) => (
+                    <BootLoad key={id} index={index} name={name} img={img} />
                 ))}
             </main>
         </>

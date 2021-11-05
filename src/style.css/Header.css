@@ -1,5 +1,5 @@
 /** Header */
-.header__barra {
+.header__bar {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 @media (min-width: 720px) {
-    .header__barra {
+    .header__bar {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;

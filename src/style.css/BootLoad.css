@@ -1,4 +1,4 @@
-/** Main */
+/*! Main */
 
 .main__container {
     display: grid;
@@ -22,7 +22,7 @@
     overflow: hidden;
 }
 
-.main__texto {
+.main__text {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,19 +40,19 @@
     margin: 0;
     padding: 1rem;
     color: azure;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
         'Lucida Sans', Arial, sans-serif, Arial, sans-serif;
     font-style: oblique;
 }
-@media (min-width: 410px) {
+@media (min-width: 412px) {
     .main__name {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
     }
 }
 @media (min-width: 768px) {
     .main__name {
-        font: 2rem;
+        font-size: 1.9rem;
     }
 }
 

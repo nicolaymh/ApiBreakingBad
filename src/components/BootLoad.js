@@ -5,7 +5,7 @@ import '../style.css/BootLoad.css';
 export const BootLoad = ({ index, name, img }) => {
     return (
         <div className='main__info'>
-            <div className='main__texto'>
+            <div className='main__text'>
                 <h1 className='main__number'>{index + 1}</h1>
                 <p className='main__name'>{name}</p>
             </div>

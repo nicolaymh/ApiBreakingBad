@@ -8,10 +8,10 @@ export const joinQuotes = (dataQuotes) => {
     dataQuotes.forEach((element) => {
         let arrayTemp = { name: element.author, quotes: null };
 
-        const uniendo = dataQuotes.map((ele) =>
+        const join = dataQuotes.map((ele) =>
             element.author === ele.author ? ele.quote : null,
         );
-        arrayTemp = { ...arrayTemp, quotes: uniendo };
+        arrayTemp = { ...arrayTemp, quotes: join };
         arrayFinal = [...arrayFinal, arrayTemp];
     });
 

@@ -20,9 +20,8 @@ export const useFetch = () => {
         const respQuotes = await fetch(urlQuotes);
         const dataQuotes = await respQuotes.json();
 
-        let arrayFinal = [];
-
         //? Array to handle global information about quote:
+        let arrayFinal = [];
 
         //* Join all quotes with its author:
         arrayFinal = joinQuotes(dataQuotes);
@@ -40,7 +39,7 @@ export const useFetch = () => {
 
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 1000);
     };
     return { infoCharacters, loading };
 };
