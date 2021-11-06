@@ -6,7 +6,7 @@ import {
     removeQuotes,
 } from '../helpers/fetchFilter';
 
-export const useFetch = () => {
+export const useFetch = (setshowComponent) => {
     const [infoCharacters, setInfoCharacters] = useState([]);
     const [loadingImages, setLoadingImages] = useState(true);
 
@@ -39,5 +39,6 @@ export const useFetch = () => {
 
         setLoadingImages(false);
     };
+
     return { infoCharacters, loadingImages };
 };

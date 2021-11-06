@@ -1,4 +1,9 @@
-export const select = (infoCharacters, setSelectCharacter) => {
+export const select = (
+    infoCharacters,
+    setSelectCharacter,
+    setLoadingCharacter,
+    setshowComponent,
+) => {
     const selectCharacterQuote = ({ target }) => {
         const characterQuotes = infoCharacters
             .filter((character) => {
@@ -10,6 +15,12 @@ export const select = (infoCharacters, setSelectCharacter) => {
 
         console.log(characterQuotes);
         setSelectCharacter(characterQuotes);
+
+        setLoadingCharacter(false);
+
+        characterQuotes.length > 0
+            ? setshowComponent(false)
+            : setshowComponent(true);
     };
 
     return { selectCharacterQuote };
