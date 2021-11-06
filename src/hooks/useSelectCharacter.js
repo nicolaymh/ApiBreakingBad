@@ -1,20 +1,10 @@
 import { useState } from 'react';
+import { select } from '../helpers/select';
 
 export const useSelectCharacter = (infoCharacters) => {
     const [selectCharacter, setSelectCharacter] = useState([]);
 
-    const selectCharacterQuote = ({ target }) => {
-        const characterQuotes = infoCharacters
-            .filter((character) => {
-                return character.name === target.value;
-            })
-            .map((char) => {
-                return { name: char.name, quotes: char.quotes };
-            });
+    const { selectCharacterQuote } = select(infoCharacters, setSelectCharacter);
 
-        console.log(characterQuotes);
-        setSelectCharacter(characterQuotes);
-    };
-
-    return { selectCharacterQuote };
+    return { selectCharacterQuote, selectCharacter };
 };

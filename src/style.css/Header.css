@@ -63,7 +63,6 @@
 .select__container {
     background-color: #1f4126;
     border-radius: 10rem;
-    padding: 0.6rem;
     color: #fff5ee;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.8rem;
@@ -71,7 +70,7 @@
     font-weight: lighter;
     text-align: center;
     border: none;
-    margin: 0 auto;
+    padding: 0.3rem;
 }
 .select__option {
     color: #489b5b;
