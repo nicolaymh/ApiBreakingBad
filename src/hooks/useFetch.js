@@ -8,7 +8,7 @@ import {
 
 export const useFetch = () => {
     const [infoCharacters, setInfoCharacters] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loadingImages, setLoadingImages] = useState(true);
 
     useEffect(() => {
         callApi();
@@ -37,7 +37,7 @@ export const useFetch = () => {
 
         setInfoCharacters([...arrayFinal]);
 
-        setLoading(false);
+        setLoadingImages(false);
     };
-    return { infoCharacters, loading };
+    return { infoCharacters, loadingImages };
 };

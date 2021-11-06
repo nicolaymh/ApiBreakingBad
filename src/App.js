@@ -8,7 +8,7 @@ import './style.css/App.css';
 import './style.css/BootLoad.css';
 
 const App = () => {
-    const { infoCharacters, loading } = useFetch();
+    const { infoCharacters, loadingImages } = useFetch();
     const { selectCharacterQuote } = useSelectCharacter(infoCharacters);
 
     return (
@@ -18,7 +18,7 @@ const App = () => {
                 selectCharacterQuote={selectCharacterQuote}
             />
 
-            {loading ? (
+            {loadingImages ? (
                 <Spinner />
             ) : (
                 <main className='container main__container'>
