@@ -45,7 +45,7 @@ const App = () => {
                 <CharacterQuotes selectedAuthor={selectedAuthor} />
             )}
 
-            <Footer />
+            {!loadingImages && <Footer />}
         </>
     );
 };

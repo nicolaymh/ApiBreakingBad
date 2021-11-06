@@ -9,8 +9,6 @@ export const select = (
             return character.name === target.value;
         });
 
-        console.log(characterQuotes);
-
         setSelectedAuthor(characterQuotes[0]);
 
         setLoadingCharacter(false);

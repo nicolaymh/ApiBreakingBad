@@ -37,7 +37,9 @@ export const useFetch = (setshowComponent) => {
 
         setInfoCharacters([...arrayFinal]);
 
-        setLoadingImages(false);
+        setTimeout(() => {
+            setLoadingImages(false);
+        }, 1000);
     };
 
     return { infoCharacters, loadingImages };

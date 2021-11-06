@@ -12,7 +12,7 @@ export const Header = ({ infoCharacters, selectCharacterQuote }) => {
             <div className='container'>
                 <div className='header__bar'>
                     <div className='header__logo1'>
-                        <img src={logo1} alt='logo' />
+                        <img src={logo1} alt='logo1' />
                     </div>
 
                     <nav className='header__nav'>
@@ -50,7 +50,7 @@ export const Header = ({ infoCharacters, selectCharacterQuote }) => {
                     </nav>
 
                     <div className='header__logo2'>
-                        <img src={logo2} alt='logo' />
+                        <img src={logo2} alt='logo2' />
                     </div>
                 </div>
             </div>

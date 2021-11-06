@@ -4,11 +4,8 @@ import '../style.css/Spinner.css';
 
 export const Spinner = () => {
     return (
-        <>
-            <div className='lds-spinner container'>
-                <div></div>
-                <div></div>
-                <div></div>
+        <div className='spinner'>
+            <div className='lds-grid spinner'>
                 <div></div>
                 <div></div>
                 <div></div>
@@ -19,6 +16,6 @@ export const Spinner = () => {
                 <div></div>
                 <div></div>
             </div>
-        </>
+        </div>
     );
 };
