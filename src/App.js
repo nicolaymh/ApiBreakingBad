@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BootLoad } from './components/BootLoad';
 import { CharacterQuotes } from './components/CharacterQuotes';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Spinner } from './components/Spinner';
 import { useFetch } from './hooks/useFetch';
@@ -43,6 +44,8 @@ const App = () => {
             ) : (
                 <CharacterQuotes selectedAuthor={selectedAuthor} />
             )}
+
+            <Footer />
         </>
     );
 };
