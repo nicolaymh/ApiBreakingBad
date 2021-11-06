@@ -59,3 +59,23 @@
     font-weight: 900;
     font-style: italic;
 }
+
+.select__container {
+    background-color: #1f4126;
+    border-radius: 10rem;
+    padding: 0.6rem;
+    color: #fff5ee;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: lighter;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+}
+.select__option {
+    color: #489b5b;
+}
+.select__option--sons {
+    color: #64970c;
+}
