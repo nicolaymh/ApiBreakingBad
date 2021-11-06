@@ -1,23 +1,19 @@
 export const select = (
     infoCharacters,
-    setSelectCharacter,
+    setSelectedAuthor,
     setLoadingCharacter,
     setshowComponent,
 ) => {
     const selectCharacterQuote = ({ target }) => {
-        const characterQuotes = infoCharacters
-            .filter((character) => {
-                return character.name === target.value;
-            })
-            .map((char) => {
-                return { name: char.name, quotes: char.quotes };
-            });
+        const characterQuotes = infoCharacters.filter((character) => {
+            return character.name === target.value;
+        });
 
         console.log(characterQuotes);
-        setSelectCharacter(characterQuotes);
+
+        setSelectedAuthor(characterQuotes[0]);
 
         setLoadingCharacter(false);
-
         characterQuotes.length > 0
             ? setshowComponent(false)
             : setshowComponent(true);

@@ -13,10 +13,8 @@ const App = () => {
     const [showComponent, setshowComponent] = useState(true);
 
     const { infoCharacters, loadingImages } = useFetch(setshowComponent);
-    const { selectCharacterQuote, loadingCharacter } = useSelectCharacter(
-        infoCharacters,
-        setshowComponent,
-    );
+    const { selectCharacterQuote, selectedAuthor, loadingCharacter } =
+        useSelectCharacter(infoCharacters, setshowComponent);
 
     return (
         <>
@@ -43,7 +41,7 @@ const App = () => {
             ) : loadingCharacter ? (
                 <Spinner />
             ) : (
-                <CharacterQuotes />
+                <CharacterQuotes selectedAuthor={selectedAuthor} />
             )}
         </>
     );

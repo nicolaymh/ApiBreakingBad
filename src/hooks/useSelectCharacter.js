@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { select } from '../helpers/select';
 
 export const useSelectCharacter = (infoCharacters, setshowComponent) => {
-    const [selectCharacter, setSelectCharacter] = useState([]);
+    const [selectedAuthor, setSelectedAuthor] = useState({});
     const [loadingCharacter, setLoadingCharacter] = useState(true);
 
     const { selectCharacterQuote } = select(
         infoCharacters,
-        setSelectCharacter,
+        setSelectedAuthor,
         setLoadingCharacter,
         setshowComponent,
     );
 
-    return { selectCharacterQuote, selectCharacter, loadingCharacter };
+    return { selectCharacterQuote, selectedAuthor, loadingCharacter };
 };
