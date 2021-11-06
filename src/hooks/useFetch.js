@@ -37,9 +37,7 @@ export const useFetch = () => {
 
         setInfoCharacters([...arrayFinal]);
 
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
+        setLoading(false);
     };
     return { infoCharacters, loading };
 };

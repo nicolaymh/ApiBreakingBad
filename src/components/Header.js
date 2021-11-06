@@ -4,8 +4,9 @@ import '../style.css/Header.css';
 
 import logo1 from '../images/logo1.png';
 import logo2 from '../images/logo2.png';
+import { SelectCharacter } from './SelectCharacter';
 
-export const Header = () => {
+export const Header = ({ infoCharacters, selectCharacterQuote }) => {
     return (
         <header>
             <div className='container'>
@@ -23,14 +24,7 @@ export const Header = () => {
                         >
                             API
                         </a>
-                        <a
-                            className='header__navLink'
-                            href='https://breakingbadapi.com/api/quotes'
-                            target='_blank'
-                            rel='noreferrer'
-                        >
-                            Quotes
-                        </a>
+
                         <a
                             className='header__navLink'
                             href='https://breakingbadapi.com/documentation'
@@ -39,6 +33,20 @@ export const Header = () => {
                         >
                             DocumentAtion
                         </a>
+
+                        <a
+                            className='header__navLink'
+                            href='https://breakingbadapi.com/api/quotes'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            Quotes
+                        </a>
+
+                        <SelectCharacter
+                            infoCharacters={infoCharacters}
+                            selectCharacterQuote={selectCharacterQuote}
+                        />
                     </nav>
 
                     <div className='header__logo2'>
