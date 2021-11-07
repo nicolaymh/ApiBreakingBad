@@ -2,12 +2,14 @@ import React from 'react';
 
 import '../style.css/Header.css';
 
-import logo1 from './img/logo1.png';
-import logo2 from './img/logo2.png';
-
 import { SelectCharacter } from './SelectCharacter';
 
-export const Header = ({ infoCharacters, selectCharacterQuote }) => {
+export const Header = ({
+    infoCharacters,
+    selectCharacterQuote,
+    logo1,
+    logo2,
+}) => {
     return (
         <header>
             <div className='container'>
