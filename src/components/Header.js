@@ -3,13 +3,18 @@ import { SelectCharacter } from './SelectCharacter';
 
 import '../style.css/Header.css';
 
-export const Header = ({ infoCharacters, selectCharacterQuote, lo, lo2 }) => {
+export const Header = ({
+    infoCharacters,
+    selectCharacterQuote,
+    imgLogo1,
+    imgLogo2,
+}) => {
     return (
         <header>
             <div className='container'>
                 <div className='header__bar'>
                     <div className='header__logo1'>
-                        <img src={lo2} alt='logo1' />
+                        <img src={imgLogo1} alt='logo1' />
                     </div>
 
                     <nav className='header__nav'>
@@ -47,7 +52,7 @@ export const Header = ({ infoCharacters, selectCharacterQuote, lo, lo2 }) => {
                     </nav>
 
                     <div className='header__logo2'>
-                        <img src={lo} alt='logo2' />
+                        <img src={imgLogo2} alt='logo2' />
                     </div>
                 </div>
             </div>

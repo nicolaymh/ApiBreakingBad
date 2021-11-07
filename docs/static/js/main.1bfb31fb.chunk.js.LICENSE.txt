@@ -1,3 +1,0 @@
-//! Add image link:
-
-//! Call Quotes Api:

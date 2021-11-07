@@ -10,6 +10,9 @@ import { useSelectCharacter } from './hooks/useSelectCharacter';
 import './style.css/App.css';
 import './style.css/BootLoad.css';
 
+import imgLogo1 from './images/logo1.png';
+import imgLogo2 from './images/logo2.png';
+
 const App = () => {
     const [showComponent, setshowComponent] = useState(true);
 
@@ -17,18 +20,13 @@ const App = () => {
     const { selectCharacterQuote, selectedAuthor, loadingCharacter } =
         useSelectCharacter(infoCharacters, setshowComponent);
 
-    const lo =
-        'https://www.pngkit.com/png/full/5-51836_nuevas-camisetas-de-breaking-bad-breaking-bad-vector.png';
-    const lo2 =
-        'https://www.nicepng.com/png/detail/64-647616_que-a-aportado-mexico-a-la-quimica-breaking.png';
-
     return (
         <>
             <Header
                 infoCharacters={infoCharacters}
                 selectCharacterQuote={selectCharacterQuote}
-                lo={lo}
-                lo2={lo2}
+                imgLogo1={imgLogo1}
+                imgLogo2={imgLogo2}
             />
 
             {showComponent ? (
