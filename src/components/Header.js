@@ -1,21 +1,15 @@
 import React from 'react';
+import { SelectCharacter } from './SelectCharacter';
 
 import '../style.css/Header.css';
 
-import { SelectCharacter } from './SelectCharacter';
-
-export const Header = ({
-    infoCharacters,
-    selectCharacterQuote,
-    logo1,
-    logo2,
-}) => {
+export const Header = ({ infoCharacters, selectCharacterQuote, lo, lo2 }) => {
     return (
         <header>
             <div className='container'>
                 <div className='header__bar'>
                     <div className='header__logo1'>
-                        <img src={logo1} alt='logo1' />
+                        <img src={lo2} alt='logo1' />
                     </div>
 
                     <nav className='header__nav'>
@@ -53,7 +47,7 @@ export const Header = ({
                     </nav>
 
                     <div className='header__logo2'>
-                        <img src={logo2} alt='logo2' />
+                        <img src={lo} alt='logo2' />
                     </div>
                 </div>
             </div>
