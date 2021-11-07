@@ -2,8 +2,9 @@ import React from 'react';
 
 import '../style.css/Header.css';
 
-import logo1 from '../images/logo1.png';
-import logo2 from '../images/logo2.png';
+import logo1 from './img/logo1.png';
+import logo2 from './img/logo2.png';
+
 import { SelectCharacter } from './SelectCharacter';
 
 export const Header = ({ infoCharacters, selectCharacterQuote }) => {
