@@ -7,8 +7,8 @@ import { Spinner } from './components/Spinner';
 import { useFetch } from './hooks/useFetch';
 import { useSelectCharacter } from './hooks/useSelectCharacter';
 
-import logo1 from './components/img/logo1.png';
-import logo2 from './components/img/logo2.png';
+import logo1 from './components/images/logo1.png';
+import logo2 from './components/images/logo2.png';
 
 import './style.css/App.css';
 import './style.css/BootLoad.css';
