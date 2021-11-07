@@ -3,19 +3,24 @@
 @media (min-width: 768px) {
     .section__container {
         display: grid;
-        grid-template-columns: 2fr 2fr;
-        grid-template-rows: 4fr 1fr;
+        grid-template-columns: 3fr 4fr;
         gap: 2rem;
+        height: auto;
     }
 }
 
 .container__character {
-    border-radius: 10rem;
+    border-top-left-radius: 9rem;
+    border-top-right-radius: 9rem;
     overflow: hidden;
+    align-self: flex-start;
 }
 @media (min-width: 768px) {
     .container__character {
-        grid-row: 1 / 2;
+        border-top-left-radius: 9rem;
+        border-top-right-radius: 0rem;
+        border-bottom-right-radius: 9rem;
+        align-self: flex-start;
     }
 }
 
@@ -47,7 +52,7 @@
 }
 @media (min-width: 768px) {
     .container__image {
-        height: 60rem;
+        height: 50rem;
     }
 }
 
