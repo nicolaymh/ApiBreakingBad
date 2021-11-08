@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import '../style.css/Footer.css';
 
-export const Footer = () => {
+export const Footer = React.memo(() => {
+    useEffect(() => {
+        console.log('Render desde Footer.js');
+    });
+
     return (
         <footer className='footer container'>
             <p className='footer__text'>
@@ -10,4 +14,4 @@ export const Footer = () => {
             </p>
         </footer>
     );
-};
+});
