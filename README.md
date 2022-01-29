@@ -1,6 +1,6 @@
 # BreakingBad Quotes
 
-Consuming [Quotes](https://breakingbadapi.com/api/quotes 'Quotes') From [The Breaking Bad Api](https://breakingbadapi.com/ 'The Breaking Bad Api') With Html, Css And The Reactjs Framework Using Functional Components (Hooks).
+Consuming [Quotes](https://breakingbadapi.com/api/quotes 'Quotes') From [The Breaking Bad Api](https://breakingbadapi.com/ 'The Breaking Bad Api') With Html, Css (responsive design) And The Reactjs Framework Using Functional Components (Hooks).
 
 ---
 
